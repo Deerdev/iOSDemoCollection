@@ -39,7 +39,7 @@
 
 #pragma mark-> 二维码扫描
 -(void)startScan{
-    QRCodeScanVC *scanVC = [[QRCodeScanVC alloc]init];
+    QRCodeScanVC *scanVC = [[QRCodeScanVC alloc] initWithTitle:@"二维码扫描" isAlbum:YES isFlash:YES];
 //    Scan_VC*vc=[[Scan_VC alloc]init];
     [self.navigationController pushViewController:scanVC animated:YES];
 }

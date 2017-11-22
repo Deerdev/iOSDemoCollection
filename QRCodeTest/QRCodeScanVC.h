@@ -10,4 +10,15 @@
 
 @interface QRCodeScanVC : UIViewController
 
+/**
+ 初始化二维码扫描
+ 
+ @param title 标题
+ @param isAblum 是否显示相册
+ @param isFlash 是否显示闪光灯
+ @return self
+ */
+
+- (instancetype)initWithTitle:(NSString*)title isAlbum:(BOOL)isAblum isFlash:(BOOL)isFlash;
+
 @end

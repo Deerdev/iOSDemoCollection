@@ -26,9 +26,28 @@ UIImagePickerControllerDelegate
 // 二维码扫描结果字符串
 @property (nonatomic, strong) NSString         *QRCodeString;
 
+// Controller的标题
+@property (nonatomic, strong) NSString         *controllerTitle;
+// 是否显示相册
+@property (nonatomic, assign) BOOL isAlbumShow;
+// 是否显示闪光灯
+@property (nonatomic, assign) BOOL isFlashShow;
+// 闪光灯是否在亮
+@property (nonatomic, assign) BOOL isFlashOn;
+
 @end
 
 @implementation QRCodeScanVC
+
+- (instancetype)initWithTitle:(NSString*)title isAlbum:(BOOL)isAblum isFlash:(BOOL)isFlash {
+    if (self = [super init]) {
+        self.isFlashShow = isFlash;
+        self.isAlbumShow = isAblum;
+        self.controllerTitle = title;
+    }
+    
+    return self;
+}
 
 /**
  *  初始化View
@@ -47,11 +66,16 @@ UIImagePickerControllerDelegate
     [self setupNavView];
     // 3.扫描区域
     [self setupScanWindowView];
-    // 4.开始动画
-    [self beginScanning];
+    // 4.检查权限
+    [self verifyCameraAccess];
+    // 5.开始动画
+//    [self beginScanning];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(QRScanAnimation) name:@"EnterForeground" object:nil];
     NSLog(@"code0: %@", _QRCodeString);
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(backBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,18 +84,106 @@ UIImagePickerControllerDelegate
 }
 
 /**
+ 检查相机是否授权
+ */
+- (void)verifyCameraAccess {
+    AVAuthorizationStatus AVstatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];//相机权限
+    switch (AVstatus) {
+        case AVAuthorizationStatusAuthorized:
+        {
+            [self beginScanning];
+        }
+            break;
+        case AVAuthorizationStatusDenied:
+        {
+            [self showAccessAlert];
+        }
+            break;
+        case AVAuthorizationStatusNotDetermined:
+        {
+            [self requireCameraAccess];
+        }
+            break;
+        case AVAuthorizationStatusRestricted:
+        {
+            [self showAccessAlert];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+/**
+ 第一次请求授权
+ */
+- (void)requireCameraAccess {
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {//相机权限
+        if (granted) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self beginScanning];
+                [self QRScanAnimation];
+            });
+        }else{
+        }
+    }];
+}
+
+
+/**
+ 请求用户开启权限的弹窗
+ */
+- (void)showAccessAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"设备不支持访问相机，\n请在设置中打开相机访问！" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *setting = [UIAlertAction actionWithTitle:@"前往设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:appSettings];
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:cancel];
+    [alert addAction:setting];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+/**
+ 后台进前台，激活动画
+ */
+- (void)backBecomeActive {
+    [self QRScanAnimation];
+    if (!self.session.running) {
+        [self.session startRunning];
+    }
+}
+
+/**
  *  开启动画
  */
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self QRScanAnimation];
+    if (!self.session.running) {
+        [self.session startRunning];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [_scanNetImageView.layer removeAnimationForKey:@"translationAnimation"];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /**
  *  处理字符串
  */
 -(void)viewDidDisappear:(BOOL)animated{
-    _session = nil;
-    NSLog(@"code1: %@", _QRCodeString);
+    [super viewDidDisappear:animated];
+    [_session stopRunning];
+    [self closeFlash];
 }
 
 /**
@@ -95,7 +207,6 @@ UIImagePickerControllerDelegate
     scanView.center          = CGPointMake(self.view.bounds.size.width * 0.5, self.view.frame.size.height * 0.5);
     _scanWindow              = scanView;
     [self.view addSubview:_scanWindow];
-    
     
     // 2.二维码扫描提示
     UILabel * tipLabel       = [[UILabel alloc] initWithFrame:CGRectMake(0, _scanWindow.frame.origin.y + _scanWindow.frame.size.height, self.view.bounds.size.width, 50)];
@@ -124,25 +235,78 @@ UIImagePickerControllerDelegate
     //leftItem.imageInsets = UIEdgeInsetsMake(-10, 0, 0, 0);
     self.navigationItem.leftBarButtonItem = leftItem;
     
-    //2.相册按钮
-    UIButton * albumBtn                    = [UIButton buttonWithType:UIButtonTypeCustom];
-    albumBtn.frame                         = CGRectMake(0, 0, 50, 35);
-    [albumBtn setTitle:@"相册" forState:UIControlStateNormal];
-    albumBtn.titleLabel.font               = [UIFont systemFontOfSize:15];
-    [albumBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    albumBtn.contentHorizontalAlignment     = UIControlContentHorizontalAlignmentRight;
-    //albumBtn.contentMode=UIViewContentModeScaleAspectFit;
-    [albumBtn addTarget:self action:@selector(readAlbum) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightItem             = [[UIBarButtonItem alloc]initWithCustomView:albumBtn];
-    self.navigationItem.rightBarButtonItem = rightItem;
-//    //3.闪光灯
-//    
-//    UIButton * flashBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-//    flashBtn.frame = CGRectMake(self.view.sd_width-55,20, 35, 49);
-//    [flashBtn setBackgroundImage:[UIImage imageNamed:@"qrcode_scan_btn_flash_down"] forState:UIControlStateNormal];
-//    flashBtn.contentMode=UIViewContentModeScaleAspectFit;
-//    [flashBtn addTarget:self action:@selector(openFlash:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:flashBtn];
+    if (_isAlbumShow) {
+        //2.相册按钮
+        UIButton * albumBtn                    = [UIButton buttonWithType:UIButtonTypeCustom];
+        albumBtn.frame                         = CGRectMake(0, 0, 50, 35);
+        [albumBtn setTitle:@"相册" forState:UIControlStateNormal];
+        albumBtn.titleLabel.font               = [UIFont systemFontOfSize:15];
+        [albumBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        albumBtn.contentHorizontalAlignment     = UIControlContentHorizontalAlignmentRight;
+        //albumBtn.contentMode=UIViewContentModeScaleAspectFit;
+        [albumBtn addTarget:self action:@selector(readAlbum) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *rightItem             = [[UIBarButtonItem alloc]initWithCustomView:albumBtn];
+        self.navigationItem.rightBarButtonItem = rightItem;
+        
+    }
+    
+    if (_isFlashShow) {
+        //3.闪光灯
+        UIButton * flashBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *flashImage = [UIImage imageNamed:@"scan_flash"];
+        flashBtn.frame = CGRectMake(0, 0, 50, flashImage.size.height * (50/flashImage.size.width));
+        [flashBtn setCenter:CGPointMake(self.view.center.x, self.view.center.y + _scanWindow.frame.size.height/2 + 100)];
+        [flashBtn setBackgroundImage:flashImage forState:UIControlStateNormal];
+        flashBtn.contentMode = UIViewContentModeScaleAspectFit;
+        [flashBtn addTarget:self action:@selector(openFlash) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:flashBtn];
+    }
+}
+
+/**
+ 打开闪光灯
+ */
+- (void)openFlash {
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    // 是否有LED
+    if ([device hasTorch]) {
+        
+        if (_isFlashOn) {
+            [device lockForConfiguration:nil];
+            [device setTorchMode: AVCaptureTorchModeOff];//关
+            [device unlockForConfiguration];
+        } else {
+            [device lockForConfiguration:nil];
+            [device setTorchMode: AVCaptureTorchModeOn];//开
+            [device unlockForConfiguration];
+        }
+        
+        _isFlashOn = !_isFlashOn;
+    } else {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"该手机不支持开启闪光灯" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+
+/**
+ 关闭闪光灯
+ */
+- (void)closeFlash {
+    if (_isFlashShow) {
+        AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        
+        if ([device hasTorch]) {
+            
+            if (_isFlashOn) {
+                [device lockForConfiguration:nil];
+                [device setTorchMode: AVCaptureTorchModeOff];//关
+                [device unlockForConfiguration];
+                _isFlashOn = false;
+            }
+        }
+    }
 }
 
 /**
