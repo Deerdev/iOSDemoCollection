@@ -31,12 +31,13 @@ class FadeInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             containView.addSubview(toView)
             toView.alpha = 0
             let originFrame = toView.frame
-            toView.frame = CGRect.init(x: originFrame.origin.x, y: originFrame.origin.y + 667, width: originFrame.width, height: originFrame.height)
+            toView.frame = CGRect.init(x: originFrame.origin.x - originFrame.width, y: originFrame.origin.y, width: originFrame.width, height: originFrame.height)
             // 向上渐变加载
             UIView.animate(withDuration: durationTime, animations: {
                 toView.alpha = 1
                 toView.frame = originFrame
             }, completion: { (_) in
+                // 结束转场
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
             
@@ -46,8 +47,9 @@ class FadeInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             // 向下渐变退出
             UIView.animate(withDuration: durationTime, animations: {
                 fromView.alpha = 0
-                fromView.frame = CGRect.init(x: originFrame.origin.x, y: originFrame.origin.y + 667, width: originFrame.width, height: originFrame.height)
+                fromView.frame = CGRect.init(x: originFrame.origin.x  - originFrame.width, y: originFrame.origin.y, width: originFrame.width, height: originFrame.height)
             }, completion: { (_) in
+                // 结束转场
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
         }

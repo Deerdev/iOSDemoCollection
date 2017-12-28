@@ -7,19 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311DF54F1FCBB66B000A5D5D /* PresentSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DF54E1FCBB66B000A5D5D /* PresentSegue.swift */; };
+		311DF5511FCBB720000A5D5D /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DF5501FCBB720000A5D5D /* DismissSegue.swift */; };
 		3179410B1FC2C01C00F96FDD /* VCNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3179410A1FC2C01C00F96FDD /* VCNavigationControllerDelegate.swift */; };
 		3179410D1FC2C10300F96FDD /* FadeInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3179410C1FC2C10300F96FDD /* FadeInTransition.swift */; };
+		31799AFA1FC443B200AB31B6 /* PresentTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799AF91FC443B200AB31B6 /* PresentTransitionViewController.swift */; };
+		31799AFC1FC443CF00AB31B6 /* SegueTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799AFB1FC443CF00AB31B6 /* SegueTransitionViewController.swift */; };
+		31799AFE1FC4509C00AB31B6 /* PresentTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799AFD1FC4509C00AB31B6 /* PresentTrasition.swift */; };
+		31799B001FC450B200AB31B6 /* DissmisTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799AFF1FC450B200AB31B6 /* DissmisTransition.swift */; };
+		31799B061FC7B40E00AB31B6 /* VCTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31799B051FC7B40E00AB31B6 /* VCTransitioningDelegate.swift */; };
 		31D9226C1FC2BF060020F0EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D9226B1FC2BF060020F0EE /* AppDelegate.swift */; };
 		31D9226E1FC2BF060020F0EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D9226D1FC2BF060020F0EE /* ViewController.swift */; };
 		31D922711FC2BF060020F0EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D9226F1FC2BF060020F0EE /* Main.storyboard */; };
 		31D922731FC2BF060020F0EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D922721FC2BF060020F0EE /* Assets.xcassets */; };
 		31D922761FC2BF060020F0EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D922741FC2BF060020F0EE /* LaunchScreen.storyboard */; };
-		31D9227E1FC2BF530020F0EE /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D9227D1FC2BF530020F0EE /* TransitionViewController.swift */; };
+		31D9227E1FC2BF530020F0EE /* PushTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D9227D1FC2BF530020F0EE /* PushTransitionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		311DF54E1FCBB66B000A5D5D /* PresentSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentSegue.swift; sourceTree = "<group>"; };
+		311DF5501FCBB720000A5D5D /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		3179410A1FC2C01C00F96FDD /* VCNavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		3179410C1FC2C10300F96FDD /* FadeInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInTransition.swift; sourceTree = "<group>"; };
+		31799AF91FC443B200AB31B6 /* PresentTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransitionViewController.swift; sourceTree = "<group>"; };
+		31799AFB1FC443CF00AB31B6 /* SegueTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueTransitionViewController.swift; sourceTree = "<group>"; };
+		31799AFD1FC4509C00AB31B6 /* PresentTrasition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTrasition.swift; sourceTree = "<group>"; };
+		31799AFF1FC450B200AB31B6 /* DissmisTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DissmisTransition.swift; sourceTree = "<group>"; };
+		31799B051FC7B40E00AB31B6 /* VCTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTransitioningDelegate.swift; sourceTree = "<group>"; };
 		31D922681FC2BF060020F0EE /* VCTransitionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCTransitionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D9226B1FC2BF060020F0EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D9226D1FC2BF060020F0EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +41,7 @@
 		31D922721FC2BF060020F0EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31D922751FC2BF060020F0EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31D922771FC2BF060020F0EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31D9227D1FC2BF530020F0EE /* TransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		31D9227D1FC2BF530020F0EE /* PushTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransitionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +76,20 @@
 			children = (
 				31D9226B1FC2BF060020F0EE /* AppDelegate.swift */,
 				31D9226D1FC2BF060020F0EE /* ViewController.swift */,
-				31D9227D1FC2BF530020F0EE /* TransitionViewController.swift */,
+				31D9227D1FC2BF530020F0EE /* PushTransitionViewController.swift */,
+				31799AF91FC443B200AB31B6 /* PresentTransitionViewController.swift */,
+				31799AFB1FC443CF00AB31B6 /* SegueTransitionViewController.swift */,
 				3179410A1FC2C01C00F96FDD /* VCNavigationControllerDelegate.swift */,
 				3179410C1FC2C10300F96FDD /* FadeInTransition.swift */,
 				31D9226F1FC2BF060020F0EE /* Main.storyboard */,
 				31D922721FC2BF060020F0EE /* Assets.xcassets */,
 				31D922741FC2BF060020F0EE /* LaunchScreen.storyboard */,
 				31D922771FC2BF060020F0EE /* Info.plist */,
+				31799AFD1FC4509C00AB31B6 /* PresentTrasition.swift */,
+				31799AFF1FC450B200AB31B6 /* DissmisTransition.swift */,
+				31799B051FC7B40E00AB31B6 /* VCTransitioningDelegate.swift */,
+				311DF54E1FCBB66B000A5D5D /* PresentSegue.swift */,
+				311DF5501FCBB720000A5D5D /* DismissSegue.swift */,
 			);
 			path = VCTransitionTest;
 			sourceTree = "<group>";
@@ -146,10 +167,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				31D9226E1FC2BF060020F0EE /* ViewController.swift in Sources */,
+				31799AFC1FC443CF00AB31B6 /* SegueTransitionViewController.swift in Sources */,
 				31D9226C1FC2BF060020F0EE /* AppDelegate.swift in Sources */,
-				31D9227E1FC2BF530020F0EE /* TransitionViewController.swift in Sources */,
+				31799B061FC7B40E00AB31B6 /* VCTransitioningDelegate.swift in Sources */,
+				31D9227E1FC2BF530020F0EE /* PushTransitionViewController.swift in Sources */,
 				3179410D1FC2C10300F96FDD /* FadeInTransition.swift in Sources */,
+				311DF54F1FCBB66B000A5D5D /* PresentSegue.swift in Sources */,
+				31799AFA1FC443B200AB31B6 /* PresentTransitionViewController.swift in Sources */,
+				31799B001FC450B200AB31B6 /* DissmisTransition.swift in Sources */,
 				3179410B1FC2C01C00F96FDD /* VCNavigationControllerDelegate.swift in Sources */,
+				311DF5511FCBB720000A5D5D /* DismissSegue.swift in Sources */,
+				31799AFE1FC4509C00AB31B6 /* PresentTrasition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
