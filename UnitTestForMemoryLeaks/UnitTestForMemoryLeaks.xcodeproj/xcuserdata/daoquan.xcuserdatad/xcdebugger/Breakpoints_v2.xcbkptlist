@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestForMemoryLeaksTests/UnitTestForMemoryLeaksTests.swift"
+            timestampString = "536230409.08045"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "testDelegateNotRetained()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestForMemoryLeaksTests/UnitTestForMemoryLeaksTests.swift"
+            timestampString = "536230409.080833"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "testObserversNotRetained()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestForMemoryLeaksTests/UnitTestForMemoryLeaksTests.swift"
+            timestampString = "536230409.08111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "testCompletionHandlersRemoved()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UnitTestForMemoryLeaksTests.ImageLoaderTests.testCompletionHandlersRemoved() -&gt; ()"
+                  moduleName = "UnitTestForMemoryLeaksTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daoquan/iOSDemoCollection/UnitTestForMemoryLeaks/UnitTestForMemoryLeaksTests/UnitTestForMemoryLeaksTests.swift"
+                  timestampString = "536137151.246233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "1635">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in UnitTestForMemoryLeaksTests.ImageLoaderTests.testCompletionHandlersRemoved() -&gt; ()"
+                  moduleName = "UnitTestForMemoryLeaksTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daoquan/iOSDemoCollection/UnitTestForMemoryLeaks/UnitTestForMemoryLeaksTests/UnitTestForMemoryLeaksTests.swift"
+                  timestampString = "536137151.250435"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UnitTestForMemoryLeaksTests/UnitTestForMemoryLeaksTests.swift"
+            timestampString = "536230409.081413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "testCompletionHandlersRemoved()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
