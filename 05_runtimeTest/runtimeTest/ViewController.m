@@ -80,7 +80,7 @@
 
 /**
  NSObject+Category.h
- 为类添加 属性(所有集成NSObject的类 都添加了name属性)
+ 为类添加 属性(所有继承NSObject的类 都添加了name属性)
  */
 - (void)addPropertyToNSObject_UsingRuntime {
     Person *p = [[Person alloc] init];

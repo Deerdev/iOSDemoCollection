@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "eat()"
+            landmarkName = "eat"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
