@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31336EF52004B1A2000E453A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31336EF32004B1A2000E453A /* Alamofire.framework */; };
 		31336EF62004B1A2000E453A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31336EF42004B1A2000E453A /* AlamofireImage.framework */; };
 		31336EF82004B4CF000E453A /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 31336EF72004B4CE000E453A /* Cartfile */; };
+		31336F002004DCFD000E453A /* Alamofire.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31336EFE2004DCFC000E453A /* Alamofire.framework.dSYM */; };
+		31336F012004DCFD000E453A /* AlamofireImage.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31336EFF2004DCFC000E453A /* AlamofireImage.framework.dSYM */; };
+		31336F092004E0F0000E453A /* DuckDuckDefineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31336F082004E0F0000E453A /* DuckDuckDefineTests.m */; };
+		31336F102004E231000E453A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31336EF42004B1A2000E453A /* AlamofireImage.framework */; };
+		31336F112004E231000E453A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31336EF32004B1A2000E453A /* Alamofire.framework */; };
 		9A91E8FF1F0D1281003D44DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91E8FE1F0D1281003D44DD /* AppDelegate.swift */; };
 		9A91E9041F0D1281003D44DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A91E9021F0D1281003D44DD /* Main.storyboard */; };
 		9A91E9061F0D1281003D44DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A91E9051F0D1281003D44DD /* Assets.xcassets */; };
@@ -20,10 +24,39 @@
 		9A91E9181F0D20E0003D44DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91E9111F0D12D5003D44DD /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		31336F0B2004E0F0000E453A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A91E8F31F0D1281003D44DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A91E8FA1F0D1281003D44DD;
+			remoteInfo = DuckDuckDefine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31336EF92004DC9C000E453A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				31336F002004DCFD000E453A /* Alamofire.framework.dSYM in CopyFiles */,
+				31336F012004DCFD000E453A /* AlamofireImage.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		31336EF32004B1A2000E453A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		31336EF42004B1A2000E453A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		31336EF72004B4CE000E453A /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		31336EFE2004DCFC000E453A /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		31336EFF2004DCFC000E453A /* AlamofireImage.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AlamofireImage.framework.dSYM; path = Carthage/Build/iOS/AlamofireImage.framework.dSYM; sourceTree = "<group>"; };
+		31336F062004E0F0000E453A /* DuckDuckDefineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuckDuckDefineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31336F082004E0F0000E453A /* DuckDuckDefineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuckDuckDefineTests.m; sourceTree = "<group>"; };
+		31336F0A2004E0F0000E453A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A91E8FB1F0D1281003D44DD /* DuckDuckDefine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckDuckDefine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A91E8FE1F0D1281003D44DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A91E9031F0D1281003D44DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,11 +70,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		31336F032004E0F0000E453A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31336F102004E231000E453A /* AlamofireImage.framework in Frameworks */,
+				31336F112004E231000E453A /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A91E8F81F0D1281003D44DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31336EF52004B1A2000E453A /* Alamofire.framework in Frameworks */,
 				31336EF62004B1A2000E453A /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,10 +99,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		31336F072004E0F0000E453A /* DuckDuckDefineTests */ = {
+			isa = PBXGroup;
+			children = (
+				31336F082004E0F0000E453A /* DuckDuckDefineTests.m */,
+				31336F0A2004E0F0000E453A /* Info.plist */,
+			);
+			path = DuckDuckDefineTests;
+			sourceTree = "<group>";
+		};
 		9A91E8F21F0D1281003D44DD = {
 			isa = PBXGroup;
 			children = (
+				31336EFE2004DCFC000E453A /* Alamofire.framework.dSYM */,
+				31336EFF2004DCFC000E453A /* AlamofireImage.framework.dSYM */,
 				9A91E8FD1F0D1281003D44DD /* DuckDuckDefine */,
+				31336F072004E0F0000E453A /* DuckDuckDefineTests */,
 				9A91E8FC1F0D1281003D44DD /* Products */,
 				31336EF22004B1A2000E453A /* Frameworks */,
 			);
@@ -71,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9A91E8FB1F0D1281003D44DD /* DuckDuckDefine.app */,
+				31336F062004E0F0000E453A /* DuckDuckDefineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +157,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		31336F052004E0F0000E453A /* DuckDuckDefineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31336F0D2004E0F0000E453A /* Build configuration list for PBXNativeTarget "DuckDuckDefineTests" */;
+			buildPhases = (
+				31336F022004E0F0000E453A /* Sources */,
+				31336F032004E0F0000E453A /* Frameworks */,
+				31336F042004E0F0000E453A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31336F0C2004E0F0000E453A /* PBXTargetDependency */,
+			);
+			name = DuckDuckDefineTests;
+			productName = DuckDuckDefineTests;
+			productReference = 31336F062004E0F0000E453A /* DuckDuckDefineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9A91E8FA1F0D1281003D44DD /* DuckDuckDefine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A91E90D1F0D1281003D44DD /* Build configuration list for PBXNativeTarget "DuckDuckDefine" */;
@@ -111,6 +183,7 @@
 				9A91E8F81F0D1281003D44DD /* Frameworks */,
 				9A91E8F91F0D1281003D44DD /* Resources */,
 				31336EF12004B05C000E453A /* ShellScript */,
+				31336EF92004DC9C000E453A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -131,6 +204,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
+					31336F052004E0F0000E453A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9A91E8FA1F0D1281003D44DD;
+					};
 					9A91E8FA1F0D1281003D44DD = {
 						CreatedOnToolsVersion = 9.0;
 					};
@@ -150,11 +228,19 @@
 			projectRoot = "";
 			targets = (
 				9A91E8FA1F0D1281003D44DD /* DuckDuckDefine */,
+				31336F052004E0F0000E453A /* DuckDuckDefineTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		31336F042004E0F0000E453A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A91E8F91F0D1281003D44DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +273,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		31336F022004E0F0000E453A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31336F092004E0F0000E453A /* DuckDuckDefineTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A91E8F71F0D1281003D44DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +294,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31336F0C2004E0F0000E453A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A91E8FA1F0D1281003D44DD /* DuckDuckDefine */;
+			targetProxy = 31336F0B2004E0F0000E453A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9A91E9021F0D1281003D44DD /* Main.storyboard */ = {
@@ -221,6 +323,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		31336F0E2004E0F0000E453A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9L9F538F7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = DuckDuckDefineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.deerdev.DuckDuckDefineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuckDuckDefine.app/DuckDuckDefine";
+			};
+			name = Debug;
+		};
+		31336F0F2004E0F0000E453A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9L9F538F7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = DuckDuckDefineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.deerdev.DuckDuckDefineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuckDuckDefine.app/DuckDuckDefine";
+			};
+			name = Release;
+		};
 		9A91E90B1F0D1281003D44DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -365,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		31336F0D2004E0F0000E453A /* Build configuration list for PBXNativeTarget "DuckDuckDefineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31336F0E2004E0F0000E453A /* Debug */,
+				31336F0F2004E0F0000E453A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9A91E8F61F0D1281003D44DD /* Build configuration list for PBXProject "DuckDuckDefine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
