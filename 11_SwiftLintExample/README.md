@@ -181,12 +181,7 @@ let hasWarning :String = "" // Warning generated about colons immediately after 
 参考：
 
 【1】[https://www.jianshu.com/p/40aa8695503f](https://www.jianshu.com/p/40aa8695503f)
+
 【2】[https://github.com/realm/SwiftLint/blob/master/README_CN.md](https://github.com/realm/SwiftLint/blob/master/README_CN.md)
 
-
-  [1]: http://static.zybuluo.com/Sweetfish/3tx2k3x8bkyh44undh2tobl8/image.png
-  [2]: http://static.zybuluo.com/Sweetfish/h316qy5tkmkcuzi8ukem0oeq/image.png
-  [3]: http://static.zybuluo.com/Sweetfish/acg2v7kprq05z2086xsuak2q/image.png
-  [4]: http://static.zybuluo.com/Sweetfish/5gyivhlmp0p0jx7ec9iyq069/image.png
-  [5]: http://static.zybuluo.com/Sweetfish/f111q1f551ucxy06snt6yah3/image.png
 
