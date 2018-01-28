@@ -1,0 +1,6 @@
+framework module Pods_XcconfigExample {
+  umbrella header "Pods-XcconfigExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
