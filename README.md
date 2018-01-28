@@ -12,8 +12,8 @@
 | [07_VCTransitionTest](./07_VCTransitionTest)               | 自定义view controller的转场动画 |
 | [08_SpeedUnitTest](./08_SpeedUnitTest)                  | QuartzCode使用样例 |
 | [09_UnitTestForMemoryLeaks](./09_UnitTestForMemoryLeaks)         | 单元测试检查内存泄漏 |
-| [10_CathageExample](./10_CathageExample)         | 单元测试检查内存泄漏 |
-| [11_SwiftLintExample](./11_SwiftLintExample)         | 单元测试检查内存泄漏 |
-| [12_XcconfigExample](./12_XcconfigExample)         | 单元测试检查内存泄漏 |
+| [10_CathageExample](./10_CathageExample)         | Carthage的使用 |
+| [11_SwiftLintExample](./11_SwiftLintExample)         | SwiftLint引入方法 |
+| [12_XcconfigExample](./12_XcconfigExample)         | xcconfig文件的使用 |
 
 
