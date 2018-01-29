@@ -1,12 +1,13 @@
 
-打包时，给Icon添加版本号-git分支-git提交记录：
+- 脚本[WaterMarkIconForDebug.sh](./WaterMarkIconForDebug.sh)，打包时，给Icon添加版本号-git分支-git提交记录：
 
-<img width="500px" src ="./resource/01.png">
+<img width="250px" src ="./resource/01.png">
 
-脚本[ManulChangeIcon.sh](./ManulChangeIcon.sh)，基于AppIcon生成debug和prerelease图标AppIcon-Dev、AppIcon-Pre，同时加上Debug和Pre水印：
 
-<img width="2250px" src ="./resource/02.png">
-<img width="50px" src ="./resource/03.png">
+- 脚本[ManulChangeIcon.sh](./ManulChangeIcon.sh)，基于AppIcon生成debug和prerelease图标AppIcon-Dev、AppIcon-Pre，同时加上Debug和Pre水印：
+
+<img width="250px" src ="./resource/02.png">
+<img width="250px" src ="./resource/03.png">
 
 
 参考：
