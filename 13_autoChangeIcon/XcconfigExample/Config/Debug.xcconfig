@@ -1,0 +1,38 @@
+//
+//  Debug.xcconfig
+//  XcconfigExample
+//
+//  Created by daoquan on 2018/1/25.
+//  Copyright © 2018年 deerdev. All rights reserved.
+//
+
+
+// name
+XC_PRODUCT_NAME = Xc(test)
+
+// icon
+XC_ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-Dev
+
+// Code Signing
+
+//CODE_SIGN_ENTITLEMENTS
+//CODE_SIGN_IDENTITY
+//CODE_SIGN_STYLE = Manual
+//DEVELOPMENT_TEAM =
+//OTHER_CODE_SIGN_FLAGS
+//PROVISIONING_PROFILE_SPECIFIER =
+
+
+// bundle id
+XC_PRODUCT_BUNDLE_IDENTIFIER = com.deerdev.XcconfigExample.Dev
+
+// version and build
+XC_SHORT_VERSION = 1.0.0.6.8
+XC_BUILD_NUMBER = 999999
+
+// enviroment
+BACKEND_URL = http:\/\/www.baidu.com/
+XC_CONFIG_CONDITION = DEBUG
+XC_CONFIG_FLAG = -DDEV
+
+
