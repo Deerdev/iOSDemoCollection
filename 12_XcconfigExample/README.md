@@ -12,9 +12,9 @@
 - 使用xcconfig
 
 **方法一的缺点**：人工操作频繁，容易出错；
-**方法二的缺点**：Target分离的build setting的设置，所以修改公共的build setting时，每个tagart都要修改，重复性工作多；添加文件时也需要勾选多个Target；
+**方法二的缺点**：Target分离了build setting的设置，所以修改公共的build setting时，每个tagart都要修改，重复性工作多；添加文件时也需要勾选多个Target；
 
-而使用`xcconfig`文件可以完美的避免以上问题，只需要更加不同环境创建xcconfig文件，然后写入对应环境的配置，“一次修改，终生可用”，本文主要介绍该方法，其他方法可通过谷歌了解。
+而使用`xcconfig`文件可以完美的避免以上问题，只需要根据不同环境创建xcconfig文件，然后再写入对应环境的配置，“一次修改，终生可用”，本文主要介绍该方法，其他方法可通过谷歌了解。
 
 ## 2. 使用xcconfig给App配置多个环境
 
@@ -26,15 +26,15 @@
 
 ## 2.1 创建xcconfig文件
 
-- 在Xcode中新建文件Other->Configuration Setting File，分别创建Debug.xcconfig、Release.xcconfig、Release.xcconfig三个文件
+- 在Xcode中新建文件，选择Other->Configuration Setting File，分别创建Debug.xcconfig、Release.xcconfig、Release.xcconfig三个文件
 
 ![001.png-137.5kB](./resource/01.png)
 
 ![002.png-118.2kB](./resource/02.png)
 
-## 2.2 给configuration配置xcconfig文件
+## 2.2 给Project的configuration配置xcconfig文件
 
-- 点击工程配置文件Info -> configurations，复制Release的配置创建一个新的configuration，命名为PreRelease
+- 点击工程配置文件Info -> configurations，复制Release的配置，创建一个新的configuration，命名为PreRelease
 
 ![image.png-73.5kB](./resource/03.png)
 
@@ -51,9 +51,9 @@
 
 > GitHub上也有xcconfig文件模板：[xcconfigs](https://github.com/jspahrsummers/xcconfigs)
 
-在build setting中选择需要修改的变量，直接`Command+C`复制该条配置，然后再xcconfig中直接`Command+V`即可粘贴对应设置的键值（Xcode真是非常“完美”），然后修改即可。
+在build setting中选择需要修改的变量，直接`Command+C`复制该条配置，然后在xcconfig中直接`Command+V`即可粘贴对应设置的键值（Xcode真是非常“完美”），然后修改即可。
 
-例如，复制App的名字，然后再xcconfig中粘贴：
+例如，复制App的名字，然后在xcconfig中粘贴：
 
 ![image.png-15kB](./resource/06.png)
 
@@ -62,13 +62,13 @@
 
 在不同xcconfig配置文件中修改对应的值，即可让App在不同环境下显示不同的名字。
 
-**注意：**因为Target中的build setting设置[优先级最高](https://pewpewthespells.com/blog/xcconfig_guide.html#BuildSettingInheritance)，所以Target中的build setting的值会覆盖xcconfig中的值，需要回到build setting中，将`Xc`的值删除，让xcconfig中值生效。
+**注意：** 因为Target中的build setting设置[优先级最高](https://pewpewthespells.com/blog/xcconfig_guide.html#BuildSettingInheritance)，所以Target中的build setting的值会覆盖xcconfig中的值，需要回到build setting中，将`Xc`的值删除，让xcconfig中值生效。
 
 ![image.png-13.9kB](./resource/08.png)
 
 ### 2.3.1 通过自定义的变量修改
 
-虽然直接copy系统变量然后修改比较方便，但是最好还是通过自定义变量的方式修改，然后将自定义变量的值赋给build setting对应的设置键。
+虽然直接copy系统变量然后修改比较方便，但是最好还是通过自定义变量的方式修改，然后将自定义变量的值赋给build setting对应的设置项。
 
 - 创建自定义变量（下面的代码定义了App的名字和icon）
 
@@ -276,7 +276,7 @@ XC_CONFIG_FLAG =
 #inclide "Pods/Target Support Files/Pods-XcconfigExample/Pods-XcconfigExample.release.xcconfig"
 ```
 
-- 然后，将Configurations重新制定为我们的自定义文件
+- 然后，将Configurations重新指定为我们的自定义文件
 
 ![image.png-83.5kB](./resource/21.png)
 
