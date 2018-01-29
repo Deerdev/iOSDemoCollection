@@ -96,13 +96,10 @@ function generateIcon() {
     # 模糊+文字
     #
     convert ${base_path} -blur 10x8 /tmp/blurred.png
-#    convert /tmp/blurred.png -gamma 0 -fill white -draw "rectangle 0,$band_position,$width,$height" /tmp/mask.png
-#    convert -size ${width}x${band_height} xc:none -fill 'rgba(0,0,0,0.2)' -draw "rectangle 0,0,$width,$band_height" /tmp/labels-base.png
-#    convert -background none -size ${width}x${band_height} -pointsize $point_size -fill white -gravity center -gravity South caption:"$caption" /tmp/labels.png
-#    convert ${base_path} /tmp/blurred.png /tmp/mask.png -composite /tmp/temp.png
-
-    convert /tmp/blurred.png -crop ${width}x${band_height}+0+${band_position} /tmp/mask.png
-    convert -background none -fill white -size ${width}x${band_height} -pointsize ${point_size} -gravity center caption:"${caption}" /tmp/mask.png +swap -composite /tmp/labels.png
+   convert /tmp/blurred.png -gamma 0 -fill white -draw "rectangle 0,$band_position,$width,$height" /tmp/mask.png
+   convert -size ${width}x${band_height} xc:none -fill 'rgba(0,0,0,0.2)' -draw "rectangle 0,0,$width,$band_height" /tmp/labels-base.png
+   convert -background none -size ${width}x${band_height} -pointsize $point_size -fill white -gravity center -gravity South caption:"$caption" /tmp/labels.png
+   convert ${base_path} /tmp/blurred.png /tmp/mask.png -composite /tmp/temp.png
 
     rm /tmp/blurred.png
     rm /tmp/mask.png
@@ -110,13 +107,13 @@ function generateIcon() {
     # 组合模糊图片和源文件
     #
     filename=New${base_file}
-#    convert /tmp/temp.png /tmp/labels-base.png -geometry +0+$band_position -composite /tmp/labels.png -geometry +0+$text_position -geometry +${w}-${h} -composite "${target_path}"
-    composite -geometry +0+${band_position} /tmp/labels.png ${base_path} ${target_path}
+   convert /tmp/temp.png /tmp/labels-base.png -geometry +0+$band_position -composite /tmp/labels.png -geometry +0+$text_position -geometry +${w}-${h} -composite "${target_path}"
+
     # 清理文件
-#    rm /tmp/temp.png
-#    rm /tmp/labels-base.png
+    rm /tmp/temp.png
+    rm /tmp/labels-base.png
     rm /tmp/labels.png
-    rm "${stored_original_file}"
+    # rm "${stored_original_file}"
     echo "Overlayed ${target_path}"
 }
 
