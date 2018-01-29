@@ -1,7 +1,7 @@
 
 打包时，给Icon添加版本号-git分支-git提交记录：
 
-![](./resource/01.png)
+<img width="500px" src ="./resource/01.png">
 
 参考：
 
