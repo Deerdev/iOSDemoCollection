@@ -11,6 +11,7 @@ import UIKit
 protocol AddDeviceTableViewCellDelegate: NSObjectProtocol {
     func scanSnNumber()
     func scanMacAddress()
+    func macTextDetect()
 }
 
 class AddDeviceTableViewCell: UITableViewCell {
@@ -21,6 +22,7 @@ class AddDeviceTableViewCell: UITableViewCell {
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var title: UILabel!
 
+    @IBOutlet weak var textScanBtn: UIButton!
     weak var delegate: AddDeviceTableViewCellDelegate?
     private var cellType: CellType?
     
@@ -37,6 +39,9 @@ class AddDeviceTableViewCell: UITableViewCell {
             delegate?.scanMacAddress()
         }
     }
+    @IBAction func textDetectClicked(_ sender: UIButton) {
+        delegate?.macTextDetect()
+    }
 
     func setModel(_ model: cellModel?) {
         guard let model = model else {
@@ -44,6 +49,7 @@ class AddDeviceTableViewCell: UITableViewCell {
         }
 
         scanbtn.isHidden = !model.isNeedScan
+        textScanBtn.isHidden = true
         var titleStr = ""
         switch model.cell {
         case .device:
@@ -54,6 +60,7 @@ class AddDeviceTableViewCell: UITableViewCell {
             titleStr = "S/N:"
         case .mac:
             titleStr = "MAC: "
+            textScanBtn.isHidden = false
         }
         cellType = model.cell
         title.text = titleStr

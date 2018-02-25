@@ -170,6 +170,15 @@ extension AddDeviceViewController: AddDeviceTableViewCellDelegate {
     }
 
     func scanMacAddress() {
+        let scanVC = QRCodeScanVC(with: "MAC地址扫描", isShowAlbum: true, isShowFlash: true)
+        scanVC.scanResult = { (result) in
+            guard let cell = self.macCell else { return }
+            cell.setMacAddress(result)
+        }
+        navigationController?.pushViewController(scanVC, animated: true)
+    }
+
+    func macTextDetect() {
         let vc = TextDetectVC()
         vc.scanResult = { (result) in
             guard let cell = self.macCell else { return }

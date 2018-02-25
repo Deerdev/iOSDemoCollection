@@ -114,17 +114,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kY6-QP-fSt">
-                                            <rect key="frame" x="105" y="22.5" width="207" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="dGI-Kg-KYt"/>
-                                            </constraints>
-                                            <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWI-CX-WQq">
-                                            <rect key="frame" x="324" y="22.5" width="37" height="30"/>
+                                            <rect key="frame" x="290" y="22.5" width="37" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="37" id="M46-mC-2gW"/>
                                                 <constraint firstAttribute="height" constant="30" id="fze-vM-6Gf"/>
@@ -132,6 +123,19 @@
                                             <state key="normal" image="qrcode_icon"/>
                                             <connections>
                                                 <action selector="scanClick:" destination="wip-CU-ckZ" eventType="touchUpInside" id="9zP-Up-Oei"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GL3-FM-uDd">
+                                            <rect key="frame" x="333" y="22.5" width="37" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="62R-Nh-zWW"/>
+                                                <constraint firstAttribute="width" constant="37" id="VHM-eJ-otX"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="eem-eE-KpR"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="hlL-OL-5R8"/>
+                                            </constraints>
+                                            <state key="normal" image="textscan"/>
+                                            <connections>
+                                                <action selector="textDetectClicked:" destination="wip-CU-ckZ" eventType="touchUpInside" id="qcR-GA-8Ss"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备型号:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCg-So-x09">
@@ -144,16 +148,27 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kY6-QP-fSt">
+                                            <rect key="frame" x="105" y="22" width="182" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="dGI-Kg-KYt"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="NWI-CX-WQq" secondAttribute="trailing" constant="14" id="GE8-FV-1E1"/>
+                                        <constraint firstItem="GL3-FM-uDd" firstAttribute="leading" secondItem="NWI-CX-WQq" secondAttribute="trailing" constant="6" id="GE8-FV-1E1"/>
                                         <constraint firstAttribute="trailing" secondItem="kY6-QP-fSt" secondAttribute="trailing" constant="14" id="Hr8-ri-hpt"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rCg-So-x09" secondAttribute="trailingMargin" id="Kjf-4V-acf"/>
                                         <constraint firstItem="rCg-So-x09" firstAttribute="leading" secondItem="jNN-4e-pDA" secondAttribute="leadingMargin" id="LA8-7d-aJz"/>
                                         <constraint firstItem="NWI-CX-WQq" firstAttribute="centerY" secondItem="jNN-4e-pDA" secondAttribute="centerY" id="Qmo-Nf-ATW"/>
                                         <constraint firstItem="kY6-QP-fSt" firstAttribute="leading" secondItem="jNN-4e-pDA" secondAttribute="leading" constant="105" id="SId-PQ-cvi"/>
                                         <constraint firstItem="rCg-So-x09" firstAttribute="centerY" secondItem="jNN-4e-pDA" secondAttribute="centerY" id="cAB-QN-NaA"/>
-                                        <constraint firstItem="NWI-CX-WQq" firstAttribute="leading" secondItem="kY6-QP-fSt" secondAttribute="trailing" constant="12" id="lci-S6-HvC"/>
+                                        <constraint firstItem="GL3-FM-uDd" firstAttribute="centerY" secondItem="jNN-4e-pDA" secondAttribute="centerY" id="fm3-pO-XEH"/>
+                                        <constraint firstAttribute="trailing" secondItem="GL3-FM-uDd" secondAttribute="trailing" constant="5" id="hhY-qm-9OY"/>
+                                        <constraint firstItem="NWI-CX-WQq" firstAttribute="leading" secondItem="kY6-QP-fSt" secondAttribute="trailing" constant="3" id="lci-S6-HvC"/>
                                         <constraint firstItem="kY6-QP-fSt" firstAttribute="centerY" secondItem="rCg-So-x09" secondAttribute="centerY" id="ttN-qR-6SE"/>
                                     </constraints>
                                     <variation key="default">
@@ -165,6 +180,7 @@
                                 <connections>
                                     <outlet property="inputText" destination="kY6-QP-fSt" id="jCu-vF-VAL"/>
                                     <outlet property="scanbtn" destination="NWI-CX-WQq" id="cO6-98-V8q"/>
+                                    <outlet property="textScanBtn" destination="GL3-FM-uDd" id="3in-u4-v2U"/>
                                     <outlet property="title" destination="rCg-So-x09" id="oTk-Dm-iwP"/>
                                     <outlet property="trailingToCell" destination="Hr8-ri-hpt" id="bvS-Sv-Mpn"/>
                                     <outlet property="trailingToScan" destination="lci-S6-HvC" id="4ss-xJ-bXR"/>
@@ -186,5 +202,6 @@
     </scenes>
     <resources>
         <image name="qrcode_icon" width="30" height="30"/>
+        <image name="textscan" width="30" height="30"/>
     </resources>
 </document>
