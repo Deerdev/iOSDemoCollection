@@ -31,6 +31,7 @@
 		3178710B2042EEE5006C0084 /* AipOcrSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 317871072042EEE5006C0084 /* AipOcrSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3178710D2042EF17006C0084 /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3178710C2042EF17006C0084 /* IdcardQuality.framework */; };
 		3178710E2042EF17006C0084 /* IdcardQuality.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3178710C2042EF17006C0084 /* IdcardQuality.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		31ACD33A20438F9500ED8CF0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ACD33920438F9500ED8CF0 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		317871072042EEE5006C0084 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipOcrSdk.framework; sourceTree = "<group>"; };
 		3178710C2042EF17006C0084 /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
 		3178710F2042EFA4006C0084 /* YYDeviceScanning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYDeviceScanning-Bridging-Header.h"; sourceTree = "<group>"; };
+		31ACD33920438F9500ED8CF0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		317870B2204000E2006C0084 /* YYDeviceScanning */ = {
 			isa = PBXGroup;
 			children = (
+				31ACD33820438F7C00ED8CF0 /* SettingVC */,
 				317870EE20414546006C0084 /* DataModel */,
 				317870E92041087F006C0084 /* AddDeviceVC */,
 				317870B3204000E2006C0084 /* AppDelegate.swift */,
@@ -233,6 +236,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		31ACD33820438F7C00ED8CF0 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				31ACD33920438F9500ED8CF0 /* SettingViewController.swift */,
+			);
+			path = SettingVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,7 +315,7 @@
 					317870AF204000E2006C0084 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					317870C3204000E2006C0084 = {
 						CreatedOnToolsVersion = 9.2;
@@ -390,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				317870F62041486B006C0084 /* DatabaseOperation.swift in Sources */,
+				31ACD33A20438F9500ED8CF0 /* SettingViewController.swift in Sources */,
 				317870FC2042CFA9006C0084 /* MainTableViewCell.swift in Sources */,
 				317870F020414562006C0084 /* DeviceInfo.swift in Sources */,
 				317870E62040F691006C0084 /* TextDetectVC.swift in Sources */,
@@ -565,8 +577,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7KB47C9C8E;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3B37F52X83;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -575,8 +588,10 @@
 				INFOPLIST_FILE = YYDeviceScanning/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.deerdev.YYDeviceScanning;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Phicomm.YYScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4722eb5c-f4df-4902-a30b-883898506aae";
+				PROVISIONING_PROFILE_SPECIFIER = YYScan;
 				SWIFT_OBJC_BRIDGING_HEADER = "YYDeviceScanning-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -589,8 +604,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7KB47C9C8E;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3B37F52X83;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -599,8 +615,10 @@
 				INFOPLIST_FILE = YYDeviceScanning/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.deerdev.YYDeviceScanning;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Phicomm.YYScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4722eb5c-f4df-4902-a30b-883898506aae";
+				PROVISIONING_PROFILE_SPECIFIER = YYScan;
 				SWIFT_OBJC_BRIDGING_HEADER = "YYDeviceScanning-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

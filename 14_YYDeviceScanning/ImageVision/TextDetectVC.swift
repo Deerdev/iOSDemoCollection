@@ -33,7 +33,7 @@ class TextDetectVC: UIViewController {
         setupNavView()
 //        setupLabel()
         configCallBack()
-        AipOcrService.shard().auth(withAK: "BHIM89Wu7ThsfX61OaKAxvOD", andSK: "RMgtaOOvZEtHT8KQiRnNA0ly5irGVoyy")
+        AipOcrService.shard().auth(withAK: k_baiduApiKey, andSK: k_baiduSecetKey)
         // Do any additional setup after loading the view.
 
         let vc = AipGeneralVC.viewController { (image) in

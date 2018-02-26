@@ -143,7 +143,7 @@ class AddDeviceViewController: UITableViewController {
             return false
         }
 
-        let info = DeviceInfo.init(cell0Text, cell1Text, cell2Text, cell3Text, nil)
+        let info = DeviceInfo.init(cell0Text.uppercased(), cell1Text, cell2Text.uppercased(), cell3Text.uppercased(), nil)
 
         if isEditingInfo {
             info.dbId = self.info?.dbId

@@ -122,16 +122,20 @@ class DBOperation: NSObject {
             """
             do {
                 let results = try database.executeQuery(query, values: nil)
-                devices = [DeviceInfo]()
+                var deviceList = [DeviceInfo]()
                 while results.next() {
-                    let productId = results.string(forColumn: k_productId) ?? ""
-                    let owner = results.string(forColumn: k_owner) ?? ""
-                    let sn = results.string(forColumn: k_sn) ?? ""
-                    let mac = results.string(forColumn: k_mac) ?? ""
-                    let dbId = Int(results.int(forColumn: k_deviceId))
+                    if let productId = results.string(forColumn: k_productId),
+                        let owner = results.string(forColumn: k_owner),
+                        let sn = results.string(forColumn: k_sn),
+                        let mac = results.string(forColumn: k_mac) {
+                        let dbId = Int(results.int(forColumn: k_deviceId))
+                        let device = DeviceInfo.init(productId, owner, sn, mac, dbId)
+                        deviceList.append(device)
+                    }
+                }
 
-                    let device = DeviceInfo.init(productId, owner, sn, mac, dbId)
-                    devices?.append(device)
+                if !deviceList.isEmpty {
+                    devices = deviceList
                 }
             } catch {
                 print(error.localizedDescription)

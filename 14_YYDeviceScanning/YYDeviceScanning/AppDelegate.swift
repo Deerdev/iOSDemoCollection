@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultStyle(.dark)
         SVProgressHUD.setMinimumDismissTimeInterval(2)
 
+        if let baiduApiKey = UserDefaults.standard.object(forKey: k_userBaiduApiKey) as? String, let baiduSecretKey = UserDefaults.standard.object(forKey: k_userBaiduSecetKey) as? String {
+            k_baiduApiKey = baiduApiKey
+            k_baiduSecetKey = baiduSecretKey
+        }
+
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         let nc = UINavigationController(rootViewController: vc)

@@ -16,7 +16,7 @@ class MainViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "登记设备"
+        self.title = "已登记设备"
 
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name.init(k_refreshDBData), object: nil)
         setupNavView()
@@ -52,11 +52,29 @@ class MainViewController: UITableViewController {
         albumBtn.addTarget(self, action: #selector(self.addDevice), for: .touchUpInside)
         let rightItem = UIBarButtonItem(customView: albumBtn)
         self.navigationItem.rightBarButtonItem = rightItem
+
+        let settingBtn = UIButton(type: .custom)
+        settingBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 35)
+        settingBtn.setTitle("设置", for: .normal)
+        settingBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        settingBtn.setTitleColor(UIColor.orange, for: .normal)
+        settingBtn.contentHorizontalAlignment = .right
+        //albumBtn.contentMode=UIViewContentModeScaleAspectFit;
+        settingBtn.addTarget(self, action: #selector(self.settingKey), for: .touchUpInside)
+        let leftItem = UIBarButtonItem(customView: settingBtn)
+        self.navigationItem.leftBarButtonItem = leftItem
     }
 
     @objc func addDevice() {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "AddDeviceViewController")
+        let nc = UINavigationController(rootViewController: vc)
+        present(nc, animated: true, completion: nil)
+    }
+
+    @objc func settingKey() {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController")
         let nc = UINavigationController(rootViewController: vc)
         present(nc, animated: true, completion: nil)
     }
@@ -113,11 +131,25 @@ extension MainViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if DBOperation.shared.deleteIndo(deviceList[indexPath.row]) {
-                deviceList.remove(at: indexPath.row)
-                tableView.reloadData()
+            showAlert(indexPath)
+        }
+    }
+
+    /// 弹窗
+    func showAlert(_ indexPath: IndexPath) {
+        let alert = UIAlertController.init(title: "确认", message: "真的要删除吗？", preferredStyle: .alert)
+
+        let cancelAction = UIAlertAction.init(title: "不要", style: .cancel) { (_) in
+        }
+        let okAction = UIAlertAction.init(title: "真的", style: .default) { (_) in
+            if DBOperation.shared.deleteIndo(self.deviceList[indexPath.row]) {
+                self.deviceList.remove(at: indexPath.row)
+                self.tableView.reloadData()
             }
         }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -29,6 +29,7 @@ class AddDeviceTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        inputText.delegate = self
     }
 
     @IBAction func scanClick(_ sender: UIButton) {
@@ -53,13 +54,13 @@ class AddDeviceTableViewCell: UITableViewCell {
         var titleStr = ""
         switch model.cell {
         case .device:
-            titleStr = "设备型号:"
+            titleStr = "型号:"
         case .person:
-            titleStr = "负责人:"
+            titleStr = "归属:"
         case .sn:
             titleStr = "S/N:"
         case .mac:
-            titleStr = "MAC: "
+            titleStr = "MAC:"
             textScanBtn.isHidden = false
         }
         cellType = model.cell
@@ -91,5 +92,13 @@ class AddDeviceTableViewCell: UITableViewCell {
         if type == .mac {
             inputText.text = str
         }
+    }
+}
+
+extension AddDeviceTableViewCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 关闭键盘
+        endEditing(true)
+        return true
     }
 }
