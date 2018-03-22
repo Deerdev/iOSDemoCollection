@@ -40,3 +40,7 @@ swift-uitableviewdatasource          UITableViewDataSource snippet for Swift
 ```
 
 
+### 安装路径
+
+`~/Library/Developer/Xcode/UserData/CodeSnippets/`
+
