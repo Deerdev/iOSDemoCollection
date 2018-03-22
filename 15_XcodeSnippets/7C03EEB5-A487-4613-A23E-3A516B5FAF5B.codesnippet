@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>caseerr</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"
+// &lt;#msg#&gt;
+case &lt;#2#&gt;: errMsg = "&lt;#验证码失效#&gt;"</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7C03EEB5-A487-4613-A23E-3A516B5FAF5B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>errcase</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

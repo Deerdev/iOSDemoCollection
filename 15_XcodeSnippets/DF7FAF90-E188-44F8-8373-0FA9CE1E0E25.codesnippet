@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>animate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        // create views, imageViews and view controllers
+        guard let sourceViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let destinationController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to),
+            let sourceView = sourceViewController.view,
+            let destinationView = destinationController.view else {
+                return
+        }
+        let containerView = transitionContext.containerView
+        
+        // add views for animation
+        containerView.addSubview(sourceView)
+        containerView.addSubview(destinationView)
+        
+        // set initial values
+        
+        // animate
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+        }, completion: { _ in
+            transitionContext.completeTransition(true)
+        })
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -&gt; TimeInterval {
+        return &lt;#duration#&gt;
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DF7FAF90-E188-44F8-8373-0FA9CE1E0E25</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Animated Transition Skeleton</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

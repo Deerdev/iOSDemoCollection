@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>key</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*  Key Frame Animation
+         1. duration
+         2. timing curve
+         3. keyframes
+         4. keyframe order
+         5. apply animation */
+        
+        let animation = CAKeyframeAnimation(keyPath: &lt;#Property to Animate (String)#&gt;)
+        animation.duration = 1
+        animation.timingFunctions = [
+            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        ]
+        
+        let keyframe1 = NSValue()
+        let keyframe2 = NSValue()
+        let keyframe3 = NSValue()
+        
+        animation.values = [keyframe1, keyframe2, keyframe3]
+        animation.keyTimes = [0, 0.5, 1]
+        &lt;#Object to Animate#&gt;.layer.add(animation, forKey: &lt;#Property to Animate (String)#&gt;)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>992E6818-14C8-499C-9221-C618EC216D73</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Keyframe Animation with Core Animation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
