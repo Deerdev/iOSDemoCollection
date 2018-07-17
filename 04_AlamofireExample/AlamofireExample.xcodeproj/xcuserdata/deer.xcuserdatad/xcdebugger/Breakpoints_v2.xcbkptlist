@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlamofireExample/&#x7167;&#x7247;&#x5355;&#x5f20;&#x67e5;&#x770b;/PhotoViewerViewController.swift"
+            timestampString = "546167480.923015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "loadPhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamofire-master/Source/ResponseSerialization.swift"
+            timestampString = "546167540.760023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "response(queue:responseSerializer:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alamofire-master/Source/ResponseSerialization.swift"
+            timestampString = "546167541.3795429"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "response(queue:responseSerializer:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alamofire.DataRequest.response&lt;A where A: Alamofire.DataResponseSerializerProtocol&gt;(queue: Swift.Optional&lt;__ObjC.DispatchQueue&gt;, responseSerializer: A, completionHandler: (Alamofire.DataResponse&lt;A.SerializedObject&gt;) -&gt; ()) -&gt; Self"
+                  moduleName = "Alamofire"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deer/iOSDemoCollection/04_AlamofireExample/Alamofire-master/Source/ResponseSerialization.swift"
+                  timestampString = "546167542.537459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Alamofire.DataRequest.response&lt;A where A: Alamofire.DataResponseSerializerProtocol&gt;(queue: Swift.Optional&lt;__ObjC.DispatchQueue&gt;, responseSerializer: A, completionHandler: (Alamofire.DataResponse&lt;A.SerializedObject&gt;) -&gt; ()) -&gt; Self"
+                  moduleName = "Alamofire"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deer/iOSDemoCollection/04_AlamofireExample/Alamofire-master/Source/ResponseSerialization.swift"
+                  timestampString = "546167542.544044"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "181">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -73,7 +73,7 @@ class NetWorkToolForOneTask: NSObject {
         })
 
         /* 【一种暂停思路:https://blog.csdn.net/jelly_1992/article/details/76512425】
-         清空下载任务，暂停后，把会话session和下载任务task都清空，下次继续任务(开启)时，走重新创建。
+         清空下载任务，暂停后，把会话session和下载任务task都清空，下次继续任务(开启)时，走重新创建的方法。
          */
 /*
         // 1-取消任务
@@ -150,7 +150,7 @@ extension NetWorkToolForOneTask: URLSessionTaskDelegate {
         print("2.1-session task(\(task)) finished")
 
         if let error = error {
-            // MARK: - 暂停任务 方法3
+            // MARK: - 暂停任务 方法3（通过error获取resumedata）
 
             // 失败时，error时有值的，并且可以获得resumeData
             let resumeData = (error as NSError).userInfo[NSURLSessionDownloadTaskResumeData] as? Data
@@ -223,7 +223,5 @@ extension NetWorkToolForOneTask: URLSessionDownloadDelegate {
 
         })
 */
-
-
     }
 }
