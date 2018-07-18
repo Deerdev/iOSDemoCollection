@@ -13,7 +13,12 @@
 		1B1A0A8F20FDD99700EF3E1B /* DXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A0A8E20FDD99700EF3E1B /* DXBaseViewController.swift */; };
 		1B1A0A9120FDDC1800EF3E1B /* HideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A0A9020FDDC1800EF3E1B /* HideBarViewController.swift */; };
 		1B1A0A9320FDE05700EF3E1B /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A0A9220FDE05700EF3E1B /* TestBaseViewController.swift */; };
+		1B48555F20FF3F8E00B85F3F /* ScrollTransparencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B48555E20FF3F8E00B85F3F /* ScrollTransparencyViewController.swift */; };
+		1B48556120FF567300B85F3F /* ColorBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B48556020FF567300B85F3F /* ColorBarViewController.swift */; };
 		1B4C025F20FDE84B00BD065C /* ShadowBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C025E20FDE84B00BD065C /* ShadowBarViewController.swift */; };
+		1B4C026120FECE2C00BD065C /* NavigationController(Transparent).swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C026020FECE2C00BD065C /* NavigationController(Transparent).swift */; };
+		1B57704D20FF0DBA00987DAC /* RuntimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B57704C20FF0DBA00987DAC /* RuntimeTableViewController.swift */; };
+		1BA8108F20FF255A00FC5626 /* RuntimeTransparenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA8108E20FF255A00FC5626 /* RuntimeTransparenceViewController.swift */; };
 		1BEE04B320FDD6B000252D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEE04B220FDD6B000252D7B /* AppDelegate.swift */; };
 		1BEE04B820FDD6B000252D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BEE04B620FDD6B000252D7B /* Main.storyboard */; };
 		1BEE04BA20FDD6B300252D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BEE04B920FDD6B300252D7B /* Assets.xcassets */; };
@@ -27,7 +32,12 @@
 		1B1A0A8E20FDD99700EF3E1B /* DXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DXBaseViewController.swift; sourceTree = "<group>"; };
 		1B1A0A9020FDDC1800EF3E1B /* HideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideBarViewController.swift; sourceTree = "<group>"; };
 		1B1A0A9220FDE05700EF3E1B /* TestBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
+		1B48555E20FF3F8E00B85F3F /* ScrollTransparencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTransparencyViewController.swift; sourceTree = "<group>"; };
+		1B48556020FF567300B85F3F /* ColorBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBarViewController.swift; sourceTree = "<group>"; };
 		1B4C025E20FDE84B00BD065C /* ShadowBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBarViewController.swift; sourceTree = "<group>"; };
+		1B4C026020FECE2C00BD065C /* NavigationController(Transparent).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController(Transparent).swift"; sourceTree = "<group>"; };
+		1B57704C20FF0DBA00987DAC /* RuntimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTableViewController.swift; sourceTree = "<group>"; };
+		1BA8108E20FF255A00FC5626 /* RuntimeTransparenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTransparenceViewController.swift; sourceTree = "<group>"; };
 		1BEE04AF20FDD6B000252D7B /* NavigationGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BEE04B220FDD6B000252D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BEE04B720FDD6B000252D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +64,7 @@
 				1B1A0A8920FDD91C00EF3E1B /* TransparenceViewController.swift */,
 				1B1A0A9020FDDC1800EF3E1B /* HideBarViewController.swift */,
 				1B4C025E20FDE84B00BD065C /* ShadowBarViewController.swift */,
+				1B48556020FF567300B85F3F /* ColorBarViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -70,8 +81,18 @@
 		1B4C025D20FDE74600BD065C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1B4C026020FECE2C00BD065C /* NavigationController(Transparent).swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1BA8108D20FF254300FC5626 /* RuntimeVC */ = {
+			isa = PBXGroup;
+			children = (
+				1BA8108E20FF255A00FC5626 /* RuntimeTransparenceViewController.swift */,
+				1B48555E20FF3F8E00B85F3F /* ScrollTransparencyViewController.swift */,
+			);
+			path = RuntimeVC;
 			sourceTree = "<group>";
 		};
 		1BEE04A620FDD6B000252D7B = {
@@ -96,12 +117,14 @@
 				1B4C025D20FDE74600BD065C /* Extension */,
 				1B1A0A8B20FDD97C00EF3E1B /* Base */,
 				1B1A0A8820FDD8BF00EF3E1B /* VC */,
+				1BA8108D20FF254300FC5626 /* RuntimeVC */,
 				1BEE04B220FDD6B000252D7B /* AppDelegate.swift */,
+				1B1A0A8620FDD71000EF3E1B /* TableViewController.swift */,
+				1B57704C20FF0DBA00987DAC /* RuntimeTableViewController.swift */,
 				1BEE04B620FDD6B000252D7B /* Main.storyboard */,
 				1BEE04B920FDD6B300252D7B /* Assets.xcassets */,
 				1BEE04BB20FDD6B300252D7B /* LaunchScreen.storyboard */,
 				1BEE04BE20FDD6B300252D7B /* Info.plist */,
-				1B1A0A8620FDD71000EF3E1B /* TableViewController.swift */,
 			);
 			path = NavigationGuide;
 			sourceTree = "<group>";
@@ -177,12 +200,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B57704D20FF0DBA00987DAC /* RuntimeTableViewController.swift in Sources */,
 				1B1A0A8720FDD71000EF3E1B /* TableViewController.swift in Sources */,
 				1B1A0A8A20FDD91C00EF3E1B /* TransparenceViewController.swift in Sources */,
+				1BA8108F20FF255A00FC5626 /* RuntimeTransparenceViewController.swift in Sources */,
 				1B4C025F20FDE84B00BD065C /* ShadowBarViewController.swift in Sources */,
 				1B1A0A9320FDE05700EF3E1B /* TestBaseViewController.swift in Sources */,
 				1B1A0A8D20FDD98E00EF3E1B /* DXNavigationVC.swift in Sources */,
+				1B4C026120FECE2C00BD065C /* NavigationController(Transparent).swift in Sources */,
+				1B48556120FF567300B85F3F /* ColorBarViewController.swift in Sources */,
 				1BEE04B320FDD6B000252D7B /* AppDelegate.swift in Sources */,
+				1B48555F20FF3F8E00B85F3F /* ScrollTransparencyViewController.swift in Sources */,
 				1B1A0A9120FDDC1800EF3E1B /* HideBarViewController.swift in Sources */,
 				1B1A0A8F20FDD99700EF3E1B /* DXBaseViewController.swift in Sources */,
 			);
@@ -330,6 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavigationGuide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NavigationGuide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

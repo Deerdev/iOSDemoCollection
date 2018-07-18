@@ -15,24 +15,28 @@ class TransparenceViewController: DXBaseViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .green
+
+//        self.edgesForExtendedLayout = UIRectEdge.all
+//        transparenceBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         transparenceBar()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeBarTransparency()
     }
 
     func transparenceBar() {
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.setNavigationBarTransparency(alpha: 0)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func removeBarTransparency() {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.setNavigationBarTransparency(alpha: 1)
     }
-    */
-
 }

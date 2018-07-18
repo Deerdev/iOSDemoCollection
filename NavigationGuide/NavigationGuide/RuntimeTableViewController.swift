@@ -1,24 +1,24 @@
 //
-//  TableViewController.swift
+//  RuntimeTableViewController.swift
 //  NavigationGuide
 //
-//  Created by deer on 2018/7/17.
+//  Created by deer on 2018/7/18.
 //  Copyright © 2018年 deer. All rights reserved.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class RuntimeTableViewController: UITableViewController {
 
-    lazy var dataSource = ["自定义返回", "透明导航栏", "隐藏导航栏", "渐变导航栏", "导航栏阴影"]
+    lazy var dataSource = ["透明导航栏(runtime)", "滑动渐变"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-         self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        view.backgroundColor = .orange
+        tableView.backgroundColor = .orange
     }
 
     // MARK: - Table view data source
@@ -39,6 +39,7 @@ class TableViewController: UITableViewController {
         if indexPath.row < dataSource.count {
             cell.textLabel?.text = dataSource[indexPath.row]
         }
+        cell.backgroundColor = .orange
         return cell
     }
 
@@ -49,39 +50,36 @@ class TableViewController: UITableViewController {
         }
         let title = dataSource[indexPath.row]
         switch title {
-        case "自定义返回": baseVC()
-        case "透明导航栏": transparenceVC()
-        case "隐藏导航栏": hideBarVC()
-        case "导航栏阴影": shadowBarVC()
-        case "渐变导航栏": GradientBarVC()
+        case "透明导航栏(runtime)": transparenceVC()
+        case "滑动渐变": scrollTransparenceVC()
         default: break
         }
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
-extension TableViewController {
+
+extension RuntimeTableViewController {
     func baseVC() {
         let vc = TestBaseViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
     func transparenceVC() {
-        let vc = TransparenceViewController()
+        let vc = RuntimeTransparenceViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    func hideBarVC() {
-        let vc = HideBarViewController()
+    func scrollTransparenceVC() {
+        let vc = ScrollTransparencyViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
     func shadowBarVC() {
         let vc = ShadowBarViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
-    func GradientBarVC() {
-        let vc = ColorBarViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

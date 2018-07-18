@@ -13,7 +13,7 @@ class DXBaseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view
-        self.adjustFrameForIOS7()
+//        self.adjustFrameForIOS7()  
         if let count = navigationController?.viewControllers.count, count > 1 {
             createBackButton()
         }

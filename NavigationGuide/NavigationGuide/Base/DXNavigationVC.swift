@@ -42,16 +42,4 @@ class DXNavigationVC: UINavigationController {
         }
         super.pushViewController(viewController, animated: animated)
     }
-    
-    func backButton() {
-        let back = UIBarButtonItem(title: "", imageName: "navbar_btn_back", target: self, action: #selector(backAction))
-        
-        self.navigationItem.leftBarButtonItem = back
-    }
-    
-    @objc func backAction() {
-        popViewController(animated: true)
-    }
-    
-    
 }

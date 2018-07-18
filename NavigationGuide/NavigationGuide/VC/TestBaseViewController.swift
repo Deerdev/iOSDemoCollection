@@ -28,7 +28,7 @@ class TestBaseViewController: DXBaseViewController {
         for subview in subviews {
             // 根据层级决定前面空格个数，来缩进显示
             var blank = ""
-            for i in 0..<level {
+            for _ in 0..<level {
                 blank = "  \(blank)"
             }
             // 打印子视图类名
@@ -40,9 +40,10 @@ class TestBaseViewController: DXBaseViewController {
 
     /**
      UINavigationBar 层级关系
-     0: <_UIBarBackground>
-         1: <UIImageView>
-         1: <UIVisualEffectView>
+
+     0: <_UIBarBackground> (背景视图)
+         1: <UIImageView> (背景图片)
+         1: <UIVisualEffectView> (毛玻璃效果)
              2: <_UIVisualEffectBackdropView>
              2: <_UIVisualEffectSubview>
      0: <_UINavigationBarLargeTitleView> (iOS11 大标题)
