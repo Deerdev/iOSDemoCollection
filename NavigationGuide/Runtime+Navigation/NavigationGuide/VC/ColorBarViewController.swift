@@ -26,20 +26,24 @@ extension UIColor {
 }
 
 var SCREEN_WIDTH = UIScreen.main.bounds.width
-class ColorBarViewController: DXBaseViewController {
+class ColorBarViewController: UIViewController {
+
+
     var blurBackView: UIView = {
         let blurBackView = UIView()
         blurBackView.frame = CGRect(x: 0, y: -20, width: SCREEN_WIDTH, height: 64)
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 64)
-        let color1 = UIColor.init(red: 0.0156863, green: 0, blue: 0.0705882, alpha: 1)
-        let color2 = UIColor.init(red: 0.0156863, green: 0, blue: 0.0705882, alpha: 0.1)
+//        gradientLayer.colors = [UIColor.hex(hex: 0x040012, alpha: 0.76).cgColor, UIColor.hex(hex: 0x040012, alpha: 0.28).cgColor]
+        let color1 = UIColor.init(red: 0.0156863, green: 0, blue: 0.0705882, alpha: 0.76)
+        let color2 = UIColor.init(red: 0.0156863, green: 0, blue: 0.0705882, alpha: 0.28)
         gradientLayer.colors = [color1.cgColor, color2.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0, y: 1.0)
         blurBackView.layer.addSublayer(gradientLayer)
         blurBackView.isUserInteractionEnabled = false
         blurBackView.alpha = 0.5
+//        blurBackView.backgroundColor = .red
         return blurBackView
     }()
 
@@ -48,33 +52,22 @@ class ColorBarViewController: DXBaseViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        title = "联系人"
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        insertBlurView()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        removeBlurView()
-    }
-
-    func insertBlurView() {
-        blurBackView.removeFromSuperview()
-        navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barStyle = .black
 //        navigationController?.navigationBar.insertSubview(blurBackView, at: 0)
-        navigationController?.navigationBar.subviews[0].insertSubview(blurBackView, at: 0)
-    }
-
-    func removeBlurView() {
-        blurBackView.removeFromSuperview()
-        navigationController?.navigationBar.barStyle = .default
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    lazy var dataSource = ["自定义返回", "修改返回按钮位置", "透明导航栏", "隐藏导航栏", "渐变导航栏", "导航栏阴影"]
+    lazy var dataSource = ["自定义返回", "透明导航栏", "隐藏导航栏", "渐变导航栏", "导航栏阴影"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +50,6 @@ class TableViewController: UITableViewController {
         let title = dataSource[indexPath.row]
         switch title {
         case "自定义返回": baseVC()
-        case "修改返回按钮位置": fixBackBtnVC()
         case "透明导航栏": transparenceVC()
         case "隐藏导航栏": hideBarVC()
         case "导航栏阴影": shadowBarVC()
@@ -66,10 +65,6 @@ extension TableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    func fixBackBtnVC() {
-        let vc = FixBackViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
     func transparenceVC() {
         let vc = TransparenceViewController()
         navigationController?.pushViewController(vc, animated: true)

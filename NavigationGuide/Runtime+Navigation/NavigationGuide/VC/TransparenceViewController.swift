@@ -15,7 +15,6 @@ class TransparenceViewController: DXBaseViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .green
-        self.title = "透明导航栏"
 
 //        self.edgesForExtendedLayout = UIRectEdge.all
 //        transparenceBar()
@@ -33,13 +32,11 @@ class TransparenceViewController: DXBaseViewController {
 
     func transparenceBar() {
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.setNavigationBarTransparency(alpha: 0)
     }
 
     func removeBarTransparency() {
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationController?.navigationBar.shadowImage = nil
+        navigationController?.setNavigationBarTransparency(alpha: 1)
     }
 }
