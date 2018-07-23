@@ -64,13 +64,35 @@ class ViewController: UIViewController {
         section4.add(cell00)
 
 
+        // 自定义cell
+        let dict = ["headImage": "head", "name": "Deerdev"]
+        let cell50 = DXTableViewCellInfo.cellFor(selector: #selector(cellClick(params0:params1:)), target: self, extraSel: #selector(customCellContent(params0:params1:)), extraTarget: self, height: 100, dict: dict, accessoryType: .disclosureIndicator, selectionStyle: .default)
+        let section5 = DXTableViewSectionInfo.sectionInfoHeader(with: "自定义cell")
+        section5.add(cell50)
+
         tableInfo.addSection(section0)
         tableInfo.addSection(section1)
         tableInfo.addSection(section2)
         tableInfo.addSection(section3)
         tableInfo.addSection(section4)
+        tableInfo.addSection(section5)
     }
 
+}
+extension ViewController {
+    /// 自定义cell的内容填充
+    @objc func customCellContent(params0: UITableViewCell, params1: DXTableViewCellInfo) {
+        let imageView = UIImageView.init(frame: CGRect(x: 10, y: 10, width: 80, height: 80))
+        imageView.image = UIImage(named: params1.getValueFor(key: "headImage") as? String ?? "")
+
+        let label = UILabel(frame: CGRect(x: 100, y: 0, width: 100, height: 20))
+        label.text = params1.getValueFor(key: "name") as? String
+        label.sizeToFit()
+
+        params0.contentView.addSubview(imageView)
+        params0.contentView.addSubview(label)
+        label.center.y = imageView.center.y
+    }
 }
 
 extension ViewController {

@@ -19,9 +19,9 @@ class DXTableViewSectionInfo: DXTableViewValueInfo {
     }
 
     // MARK: - init
-    class func sectionInfoDefault() -> DXTableViewSectionInfo {
+    class func sectionInfoDefault(headerHeight: CGFloat = 0.01) -> DXTableViewSectionInfo {
         let info = DXTableViewSectionInfo()
-        info.headerHeight = 0.01
+        info.headerHeight = headerHeight
         return info
     }
 
