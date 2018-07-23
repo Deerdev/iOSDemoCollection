@@ -23,6 +23,11 @@ class DXTableViewCellInfo: DXTableViewValueInfo {
     var extraSel: Selector?
     weak var extraTarget: NSObject?
 
+    private override init() {
+        super.init()
+    }
+
+    // MARK: - cell init
     /// 没有点击事件（标题+右边字）
     class func normalCellFor(title: String, rightValue: String) -> DXTableViewCellInfo {
         let info = DXTableViewCellInfo()
@@ -42,6 +47,7 @@ class DXTableViewCellInfo: DXTableViewValueInfo {
     /// 有点击事件（标题+右边字）
     class func normalCellFor(selector: Selector, target: NSObject, title: String, rightValue: String, accessoryType: UITableViewCell.AccessoryType) -> DXTableViewCellInfo {
         let info = self.normalCellFor(title: title, rightValue: rightValue)
+        info.selectionStyle = .default
         info.target = target
         info.selector = selector
         info.accessoryType = accessoryType
@@ -58,6 +64,8 @@ class DXTableViewCellInfo: DXTableViewValueInfo {
     /// 有点击事件（标题居中）
     class func centerCellFor(selector: Selector, target: NSObject, title: String) -> DXTableViewCellInfo {
         let info = DXTableViewCellInfo()
+        // 居中，cell的类型必须是 default
+        info.cellStyle = .default
         info.add(value: title, for: "title")
         info.target = target
         info.selector = selector
@@ -73,6 +81,7 @@ class DXTableViewCellInfo: DXTableViewValueInfo {
         info.extraTarget = info
         info.selectionStyle = .none
         info.add(value: isOn, for: "on")
+        info.add(value: title, for: "title")
         return info
     }
 
@@ -101,6 +110,7 @@ class DXTableViewCellInfo: DXTableViewValueInfo {
     }
 }
 
+// MARK: - selector
 extension DXTableViewCellInfo {
     /// cell的标题文字居中
     @objc func centerTextAlignOf(cell: UITableViewCell) {
@@ -116,10 +126,10 @@ extension DXTableViewCellInfo {
         cell.accessoryView = switcher
     }
 
-    /// switch点击事件
+    /// switch点击事件(传递给外面的接收者)
     @objc func switchValueChanged(_ sender: UISwitch) {
         self.add(value: sender.isOn, for: "on")
-        if let target = targetOfSwitch, let sel = extraSel, let indexPath = indexPath, target.responds(to: sel) {
+        if let target = targetOfSwitch, let sel = selector, let indexPath = indexPath, target.responds(to: sel) {
             target.perform(sel, with: self, with: indexPath)
         }
     }

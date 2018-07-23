@@ -14,8 +14,14 @@ class DXTableViewSectionInfo: DXTableViewValueInfo {
     var headerHeight: CGFloat = 20
     var footerHeight: CGFloat = 0.01
 
+    private override init() {
+        super.init()
+    }
+
+    // MARK: - init
     class func sectionInfoDefault() -> DXTableViewSectionInfo {
         let info = DXTableViewSectionInfo()
+        info.headerHeight = 0.01
         return info
     }
 
@@ -39,19 +45,24 @@ class DXTableViewSectionInfo: DXTableViewValueInfo {
         let info = DXTableViewSectionInfo()
         if let title = headerTitle {
             info.add(value: title, for: "headerTitle")
+            info.headerHeight = -1
         }
         if let view = headerView {
             info.add(value: view, for: "header")
+            info.headerHeight = view.frame.height
         }
         if let title = footerTitle {
             info.add(value: title, for: "footerTitle")
+            info.footerHeight = -1
         }
         if let view = footerView {
             info.add(value: view, for: "footer")
+            info.footerHeight = view.frame.height
         }
         return info
     }
 
+    // MARK: - cell opertation
     func cellCount() -> Int {
         return cellInfos.count
     }

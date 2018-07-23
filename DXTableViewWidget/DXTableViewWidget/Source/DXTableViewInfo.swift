@@ -15,6 +15,8 @@ class DXTableViewInfo: NSObject {
     init(frame: CGRect, style: UITableView.Style) {
         super.init()
         tableView = DXTableView(frame: frame, style: style)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     func getTableView() -> UITableView {
@@ -110,6 +112,7 @@ extension DXTableViewInfo: UITableViewDataSource {
         cell.selectionStyle = cellInfo.selectionStyle
         cell.textLabel?.text = cellInfo.getValueFor(key: "title") as? String
         cell.detailTextLabel?.text = cellInfo.getValueFor(key: "rightValue") as? String
+        cellInfo.indexPath = indexPath
 
         if let imageName = cellInfo.getValueFor(key: "imageName") as? String, !imageName.isEmpty {
             cell.imageView?.image = UIImage(named: imageName)
@@ -172,12 +175,12 @@ extension DXTableViewInfo: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         guard section < sectionInfos.count  else { return nil }
         let sectionInfo = sectionInfos[section]
-        return sectionInfo.getValueFor(key: "headerTitle") as? String
+        return sectionInfo.getValueFor(key: "footerTitle") as? String
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard section < sectionInfos.count  else { return nil }
         let sectionInfo = sectionInfos[section]
-        return sectionInfo.getValueFor(key: "footerTitle") as? String
+        return sectionInfo.getValueFor(key: "headerTitle") as? String
     }
 }
