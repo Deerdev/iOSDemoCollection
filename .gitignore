@@ -1,0 +1,14 @@
+.DS_Store
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata
+/ObjcUML
+*.xcuserstate
+project.xcworkspace
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+*.xccheckout
+UserInterface.xcuserstate
+*.swp
+Carthage
