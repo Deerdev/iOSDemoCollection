@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DXTableViewWidget/ViewController.swift"
-            timestampString = "554007644.0493"
+            timestampString = "554008210.6845829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "cellSwitch(params0:params1:)"
             landmarkType = "7">
          </BreakpointContent>

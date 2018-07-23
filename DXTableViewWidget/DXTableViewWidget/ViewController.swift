@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         let cell01 = DXTableViewCellInfo.normalCellFor(title: "有图片", rightValue: "点击无效", imageName: "test")
         let cell02 = DXTableViewCellInfo.normalCellFor(selector: #selector(cellClick(params0:params1:)), target: self, title: "可点击", rightValue: "可点击", accessoryType: .disclosureIndicator)
         let cell03 = DXTableViewCellInfo.normalCellFor(selector: #selector(cellClick(params0:params1:)), target: self, title: "可点击", rightValue: "可点击", accessoryType: .disclosureIndicator, imageName: "test")
-        let cell04 = DXTableViewCellInfo.centerCellFor(selector: #selector(cellClick(params0:params1:)), target: self, title: "居中可点击")
+        let cell04 = DXTableViewCellInfo.centerCellFor(selector: #selector(cellClick(params0:)), target: self, title: "居中可点击")
 
         let cell10 = DXTableViewCellInfo.switchCellFor(title: "无事件", isOn: true)
         let cell11 = DXTableViewCellInfo.switchCellFor(selector: #selector(cellSwitch(params0:params1:)), target: self, title: "有事件", isOn: true)
@@ -74,10 +74,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    /// 接收两个参数的点击事件
     @objc func cellClick(params0: DXTableViewCellInfo, params1: IndexPath) {
         debugPrint("click on \(params1)")
     }
 
+    /// 只接收一个参数的点击事件
+    @objc func cellClick(params0: DXTableViewCellInfo) {
+        debugPrint("click on \(params0)")
+    }
+
+    /// switch的valueChange事件
     @objc func cellSwitch(params0: DXTableViewCellInfo, params1: IndexPath) {
         if let isOn = params0.getValueFor(key: "on") as? Bool {
             let title = "有事件" + (isOn ? "(打开)" : "(关闭)")
